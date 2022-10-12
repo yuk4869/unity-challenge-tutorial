@@ -31,6 +31,7 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            //float4 _Color;
 
             v2f vert(appdata v)
             {
@@ -44,7 +45,10 @@
             {
                 float4 c = tex2D(_MainTex, i.uv);
                 /* YOUR ANSWER HERE */
-
+                c.r = 1.0f;
+                c.g = 0.0f;
+                c.b = 0.0f;
+                c.a = 1.0f;
                 return c;
             }
 

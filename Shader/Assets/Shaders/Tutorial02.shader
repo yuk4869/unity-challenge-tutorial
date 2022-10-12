@@ -4,6 +4,8 @@
     {
         [PerRendererData]
         _MainTex("Texture", 2D) = "white" {}
+
+        
     }
     SubShader
     {
@@ -32,6 +34,8 @@
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+
+
             v2f vert(appdata v)
             {
                 v2f o;
@@ -45,6 +49,10 @@
                 float4 c = tex2D(_MainTex, i.uv);
                 /* YOUR ANSWER HERE */
 
+                c.r = i.uv.x;
+                c.g = i.uv.y;
+                c.b = i.uv.x;
+                c.a = 1.0;
                 return c;
             }
 
